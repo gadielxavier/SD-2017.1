@@ -1,0 +1,32 @@
+module I_FETCH_TEST;
+
+//inputs
+reg EX_MEM_PCSrc, RST;
+reg [31:0] EX_MEM_NPC;
+
+//Outputs
+wire [31:0] IF_ID_INSTR;
+wire [31:0] IF_ID_NPC;
+
+//Instantiate the Unit Under Test uut
+
+I_FETCH uut (
+	.EX_MEM_PCSrc(EX_MEM_PCSrc),
+	.RST(RST),
+	.EX_MEM_NPC(EX_MEM_NPC),
+	.IF_ID_INSTR(IF_ID_INSTR),
+	.IF_ID_NPC(IF_ID_NPC)
+	);
+
+initial
+begin
+	RST = 1;
+	EX_MEM_NPC = 0;
+	EX_MEM_PCSrc =0;
+	#5
+	RST = 0;
+	#20
+	$stop;
+end
+
+endmodule
