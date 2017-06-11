@@ -9,7 +9,6 @@ module 	IF_ID(
 			);
 
 initial
-
 begin
 	instruction_out <= 0;
 	npc_out <=0;

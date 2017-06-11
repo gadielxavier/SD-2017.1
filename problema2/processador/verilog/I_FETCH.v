@@ -18,15 +18,15 @@ wire [31:0] npc, npc_mux;
 //instantiations
 
 muxIF muxIF_1 (
-				.npc(npc_mux),
-				.s1(EX_MEM_NPC),
 				.s0(npc),
-				.select(EX_MEM_PCSrc)
+				.s1(EX_MEM_NPC),
+				.select(EX_MEM_PCSrc),
+				.npc(npc_mux)
 			);
 
 pc pc_1 (
-			.pc_out(PC),
-			.npc(npc_mux)
+			.npc(npc_mux),
+			.pc_out(PC)
 		);
 
 instMem instMem_1 (
@@ -36,15 +36,15 @@ instMem instMem_1 (
 				);
 
 IF_ID IF_ID_1 (
-				.instruction_out(IF_ID_INSTR),
-				.npc_out(IF_ID_NPC),
 				.instruction_in(dataout),
-				.npc_in(npc)
+				.npc_in(npc),
+				.instruction_out(IF_ID_INSTR),
+				.npc_out(IF_ID_NPC)
 			);
 
 incrementer incrementer_1 (
-							.pc_out(npc),
-							.pc_in(PC)
+							.pc_in(PC),
+							.pc_out(npc)
 						);
 
 endmodule

@@ -1,4 +1,4 @@
-module regfile(input clk,
+module regfile( input clk,
  				input we3,
  				input [4:0] ra1, ra2, wa3,
  				input [31:0] wd3,
@@ -12,7 +12,10 @@ module regfile(input clk,
 // register 0 hardwired to 0
 
 always @(posedge clk) 
+begin
 	if(we3) rf[wa3] <=  wd3;
-assign rd1 =  (ra1 ! = 0) ? rf[ra1]:0;
-assign rd2 =  (ra2 ! =   0)? rf[ra2]:0; 
+	assign rd1 =  (ra1 ! = 0) ? rf[ra1]:0;
+	assign rd2 =  (ra2 ! =   0)? rf[ra2]:0; 
+end
+	
 endmodule
