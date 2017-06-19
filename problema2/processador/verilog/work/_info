@@ -9,13 +9,13 @@ z2
 cModel Technology
 dC:/intelFPGA/16.1
 vALU
-!s110 1497732038
+!s110 1497875393
 !i10b 1
-!s100 ]@b@z>hCV1>WY8WEdNVVh0
-IMW;dMiQf<XgCQBKI_8W;L3
+!s100 n4X;gfi2;0i3:IB;`ZR@L0
+IeZB`:MJnlOo`h>oHg@RI62
 Z0 VDg1SIo80bB@j0V0VzS_@n1
 Z1 dC:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/verilog
-w1497732026
+w1497835364
 8C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/laboratorios/lab3/lab3/src/ALU.v
 FC:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/laboratorios/lab3/lab3/src/ALU.v
 L0 18
@@ -23,15 +23,59 @@ Z2 OV;L;10.5b;63
 r1
 !s85 0
 31
-!s108 1497732038.000000
+!s108 1497875393.000000
 !s107 C:\Users\Gadiel Xavier\Documents\UEFS\SD-2017.1\laboratorios\lab3\lab3\src\ALUop.vh|C:\Users\Gadiel Xavier\Documents\UEFS\SD-2017.1\laboratorios\lab3\lab3\src\Opcode.vh|C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/laboratorios/lab3/lab3/src/ALU.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/laboratorios/lab3/lab3/src/ALU.v|
 !i113 1
 Z3 o-work work
 Z4 tCvgOpt 0
 n@a@l@u
+vALUdec
+!s110 1497876890
+!i10b 1
+!s100 b8Xl5C7cM6YK1l1<M7B[>3
+I6Y_L7lQ4IZfhhJFkAJDT:1
+R0
+R1
+w1497876880
+8C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/laboratorios/lab3/lab3/src/ALUdec.v
+FC:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/laboratorios/lab3/lab3/src/ALUdec.v
+L0 16
+R2
+r1
+!s85 0
+31
+!s108 1497876890.000000
+!s107 C:\Users\Gadiel Xavier\Documents\UEFS\SD-2017.1\laboratorios\lab3\lab3\src\ALUop.vh|C:\Users\Gadiel Xavier\Documents\UEFS\SD-2017.1\laboratorios\lab3\lab3\src\Opcode.vh|C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/laboratorios/lab3/lab3/src/ALUdec.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/laboratorios/lab3/lab3/src/ALUdec.v|
+!i113 1
+R3
+R4
+n@a@l@udec
+vALUTestVectorTestbench
+Z5 !s110 1497839097
+!i10b 1
+!s100 <IeI3<o2NR=6oz7SgEG0_0
+IfJh;;zDCWi@eIUlYTIUA00
+R0
+R1
+w1358910234
+8C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/laboratorios/lab3/lab3/sim/tb/ALUTestVectorTestbench.v
+FC:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/laboratorios/lab3/lab3/sim/tb/ALUTestVectorTestbench.v
+L0 11
+R2
+r1
+!s85 0
+31
+Z6 !s108 1497839097.000000
+!s107 C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/laboratorios/lab3/lab3/sim/tb/ALUTestVectorTestbench.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/laboratorios/lab3/lab3/sim/tb/ALUTestVectorTestbench.v|
+!i113 1
+R3
+R4
+n@a@l@u@test@vector@testbench
 vcontrol_unity
-Z5 !s110 1497141379
+Z7 !s110 1497839096
 !i10b 1
 !s100 @Om@4@?AVT]AMAAOHQ7AL3
 IH2<LO_?BglCSn[iWCNYkN0
@@ -45,14 +89,14 @@ R2
 r1
 !s85 0
 31
-Z6 !s108 1497141379.000000
+Z8 !s108 1497839096.000000
 !s107 C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/verilog/control_unity.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/verilog/control_unity.v|
 !i113 1
 R3
 R4
 vI_DECODE
-!s110 1497146260
+R7
 !i10b 1
 !s100 aP3GWIYFh16>mEF0G6SO:0
 IUDII1bLfR[akO9YSc^GX80
@@ -66,7 +110,7 @@ R2
 r1
 !s85 0
 31
-!s108 1497146260.000000
+R8
 !s107 C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/verilog/I_DECODE.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/verilog/I_DECODE.v|
 !i113 1
@@ -74,7 +118,7 @@ R3
 R4
 n@i_@d@e@c@o@d@e
 vI_FETCH
-R5
+R7
 !i10b 1
 !s100 BcSLL^dIU`7PAcMoFT`i;2
 I0GSbXC2eOM5bcG_BGlNTZ2
@@ -88,7 +132,7 @@ R2
 r1
 !s85 0
 31
-R6
+R8
 !s107 C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/verilog/I_FETCH.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/verilog/I_FETCH.v|
 !i113 1
@@ -96,7 +140,7 @@ R3
 R4
 n@i_@f@e@t@c@h
 vI_FETCH_TEST
-R5
+R7
 !i10b 1
 !s100 6E;>Zo4?YWS9gHSfD_8=f1
 Ik2;=YMo>h3o@MVK5HcVT:2
@@ -110,7 +154,7 @@ R2
 r1
 !s85 0
 31
-R6
+R8
 !s107 C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/verilog/I_FETCH_TEST.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/verilog/I_FETCH_TEST.v|
 !i113 1
@@ -118,7 +162,7 @@ R3
 R4
 n@i_@f@e@t@c@h_@t@e@s@t
 vID_EX
-!s110 1497141949
+R5
 !i10b 1
 !s100 Id1`ZT<;@5b3U;<@aKXQY1
 IB:7N^IBhaD:7ghk4<H`821
@@ -132,7 +176,7 @@ R2
 r1
 !s85 0
 31
-!s108 1497141949.000000
+R6
 !s107 C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/verilog/ID_EX.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/verilog/ID_EX.v|
 !i113 1
@@ -162,7 +206,7 @@ R3
 R4
 n@i@f_@i@d
 vincrementer
-R5
+R7
 !i10b 1
 !s100 9Rdf?VOU78ozP9ioa@B`A0
 IBIKkBckR8Lg4H58E6FaF>0
@@ -176,14 +220,14 @@ R2
 r1
 !s85 0
 31
-R6
+R8
 !s107 C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/verilog/incrementer.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/verilog/incrementer.v|
 !i113 1
 R3
 R4
 vinstMem
-R5
+R7
 !i10b 1
 !s100 9U8n]jco7SeR;7>mDgSZS2
 I<J?52eiaMRe[=5gRU7[?Z2
@@ -197,7 +241,7 @@ R2
 r1
 !s85 0
 31
-R6
+R8
 !s107 C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/verilog/instMem.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/verilog/instMem.v|
 !i113 1
@@ -205,7 +249,7 @@ R3
 R4
 ninst@mem
 vmuxIF
-R5
+R7
 !i10b 1
 !s100 RGeKLbZ;7XA80KaOidFfJ0
 IfCgMO@MTe_gD7O5nn^n>i2
@@ -219,7 +263,7 @@ R2
 r1
 !s85 0
 31
-R6
+R8
 !s107 C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/verilog/muxIF.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/verilog/muxIF.v|
 !i113 1
@@ -227,7 +271,7 @@ R3
 R4
 nmux@i@f
 vpc
-R5
+R7
 !i10b 1
 !s100 f4Ld7fJ6aE3]A5mmR[CSJ3
 IE;ERBTBiXbc`9kmKkS@1^1
@@ -241,14 +285,14 @@ R2
 r1
 !s85 0
 31
-R6
+R8
 !s107 C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/verilog/pc.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/verilog/pc.v|
 !i113 1
 R3
 R4
 vRegisterFile
-R5
+R7
 !i10b 1
 !s100 TU9K]:VdkFTR>UGD1@<0Q3
 IhU<eH14HTA83?`KZbZn?=2
@@ -262,7 +306,7 @@ R2
 r1
 !s85 0
 31
-R6
+R8
 !s107 C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/verilog/RegisterFile.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/verilog/RegisterFile.v|
 !i113 1
@@ -284,7 +328,7 @@ R2
 r1
 !s85 0
 31
-R6
+R8
 !s107 C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/verilog/signext.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/verilog/signext.v|
 !i113 1

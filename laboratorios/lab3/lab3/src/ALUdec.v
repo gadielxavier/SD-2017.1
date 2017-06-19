@@ -18,39 +18,44 @@ module ALUdec(
   output reg [3:0] ALUop
 );
 
+always @(*) begin
 	if(opcode == `RTYPE) begin
-		case(funct) 
-    		`SLL:     	ALUop = `ALU_SLLV;
-			`SRL:     	ALUop = `ALU_SRLV;
-			`SRA:		ALUop = `ALU_SRAV;
-			`SLLV:		ALUop = `ALU_SLLV;
-			`SRLV:    	ALUop = `ALU_SRLV;
-			`SRAV:    	ALUop = `ALU_SRAV;
-			`ADDU:    	ALUop = `ALU_ADDU;
-			`SUBU:    	ALUop = `ALU_SUBU;
-			`AND:     	ALUop = `ALU_AND;
-			`OR:     	ALUop = `ALU_OR;
-			`XOR:     	ALUop = `ALU_XOR;
-			`NOR:     	ALUop = `ALU_NOR;
-			`SLT:     	ALUop = `ALU_SLT;
-			`SLTU:  	ALUop = `ALU_SLTU;
-			default: 	ALUop = `ALU_XXX;				
-    endcase
+		case(funct)
+    		`SLL:     	ALUop <= `ALU_SLL;
+			`SRL:     	ALUop <= `ALU_SRL;
+			`SRA:		ALUop <= `ALU_SRA;
+			`SLLV:		ALUop <= `ALU_SLL;
+			`SRLV:    	ALUop <= `ALU_SRL;
+			`SRAV:    	ALUop <= `ALU_SRA;
+			`ADDU:    	ALUop <= `ALU_ADDU;
+			`SUBU:    	ALUop <= `ALU_SUBU;
+			`AND:     	ALUop <= `ALU_AND;
+			`OR:     	ALUop <= `ALU_OR;
+			`XOR:     	ALUop <= `ALU_XOR;
+			`NOR:     	ALUop <= `ALU_NOR;
+			`SLT:     	ALUop <= `ALU_SLT;
+			`SLTU:  	ALUop <= `ALU_SLTU;
+			default: 	ALUop <= `ALU_XXX;				
+    	endcase
+    end
+    else begin
+    	case(opcode)
+    	`LB,`LH,`LW,`LBU,`LHU,`SB,`SH,`SW: ALUop <= `ALU_ADDU;
 
-    `LB,`LH,`LW,`LBU,`LHU,`SB,`SH,`SW: ALUop = `ALU_ADDU;
+    	`ADDIU: ALUop <= `ALU_ADDU;
+    	`SLTI: ALUop <= `ALU_SLT;
+		`SLTIU: ALUop <= `ALU_SLTU;
+		`ANDI: ALUop <= `ALU_AND;
+		`ORI: ALUop <= `ALU_OR;
+		`XORI: ALUop <= `ALU_XOR;
+		`LUI: ALUop <= `ALU_LUI;
 
-    `ADDIU: ALUop = `ALU_ADDU;
-    `SLTI: ALUop = `ALU_SLT;
-	`SLTIU: ALUop = `ALU_SLTU;
-	`ANDI: ALUop = `ALU_AND;
-	`ORI: ALUop = `ALU_OR;
-	`XORI: ALUop = `ALU_XOR;
-	`LUI: ALUop = `ALU_LUI;
+		default: ALUop = `ALU_XXX;
+		endcase
+    end
 
-	default: ALUop = `ALU_XXX;
+    
 
-
-
-    // Implement your ALU decoder here, then delete this comment
+end
 
 endmodule
