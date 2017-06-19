@@ -2,7 +2,7 @@ module I_DECODE(
 
 				input wire [31:0] instruction_in, npc_in,
 				input wire clk,
-				wire RegWriteFromWB,
+				input wire RegWriteFromWB,
 
 
 				output wire branch_out_1,
@@ -41,9 +41,10 @@ wire [31:0] writeData;
 wire [31:0] readData1, readDatad2;
 
 assign signext_in = instruction_in[15:0];
-assign opcode_1 = instruction_in[31:26] ;
-assign readRegister1 = instruction_in[25:21];
 assign readRegister2 = instruction_in[20:16];
+assign readRegister1 = instruction_in[25:21];
+assign opcode_1 = instruction_in[31:26];
+
 
 //Instantiantions
 signext signext_1(
@@ -74,7 +75,7 @@ RegisterFile RegisterFile_1(
 					.Clk(clk),
 					.RegWrite(RegWriteFromWB),
 					.ReadData1(readData1),
-					.ReadDatad2(readDatad2)
+					.ReadData2(readDatad2)
 					);
 
 ID_EX ID_EX_1(

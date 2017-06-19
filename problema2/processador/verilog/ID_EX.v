@@ -3,7 +3,7 @@ Latch which passes data from the Fetch Stage to
 the Decode Stage.
 */
 
-module 	IF_ID(
+module 	ID_EX(
 				input wire branch, // Combined with a condition test boolean to enable loading the branch target address into the PC. 
 				input wire jump, //  Enables loading the jump target address into the PC. 
 				input wire AluSrc, //  Selects the second source operand for the ALU (rt or sign-extended immediate field in Patterson and Hennessey). 
@@ -17,8 +17,8 @@ module 	IF_ID(
 				input wire [31:0] readdata1,
 				input wire [31:0] readdata2,
 				input wire [31:0] sigext, 
-				input wire [31:0] instruction_2015,
-				input wire [31:0] instruction_1511,
+				input wire [4:0] instruction_2015,
+				input wire [4:0] instruction_1511,
 
 
 				output reg branch_out,
@@ -34,8 +34,8 @@ module 	IF_ID(
 				output reg [31:0] readdata1_out,
 				output reg [31:0] readdata2_out,
 				output reg [31:0] sigext_out,
-				output reg [31:0] instruction_2015_out,
-				output reg [31:0] instruction_1511_out
+				output reg [4:0] instruction_2015_out,
+				output reg [4:0] instruction_1511_out
 			);
 
 initial
