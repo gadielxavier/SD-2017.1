@@ -7,7 +7,7 @@ module 	ID_EX(
 				input wire branch, // Combined with a condition test boolean to enable loading the branch target address into the PC. 
 				input wire jump, //  Enables loading the jump target address into the PC. 
 				input wire AluSrc, //  Selects the second source operand for the ALU (rt or sign-extended immediate field in Patterson and Hennessey). 
-				input wire [1:0] AluOp,  //  Either specifies the ALU operation to be performed or specifies that the operation should be determined from the function bits. 
+				input wire [5:0] AluOp,  //  Either specifies the ALU operation to be performed or specifies that the operation should be determined from the function bits. 
 				input wire MemRead, //  Enables a memory read for load instructions. 
 				input wire MemWrite, // Enables a memory write for store instructions. 
 				input wire RegWrite, //  Enables a write to one of the registers. 
@@ -24,7 +24,7 @@ module 	ID_EX(
 				output reg branch_out,
 				output reg jump_out,
 				output reg AluSrc_out,
-				output reg [1:0] AluOp_out,
+				output reg [5:0] AluOp_out,
 				output reg MemRead_out,
 				output reg MemWrite_out,
 				output reg RegWrite_out,

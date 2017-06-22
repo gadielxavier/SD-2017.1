@@ -96,13 +96,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	I_FETCH
 
-} {} {}} {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/verilog/I_DECODE.v} {1 {vlog -work work -stats=none {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/verilog/I_DECODE.v}
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module I_DECODE
-
-Top level modules:
-	I_DECODE
-
 } {} {}} {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/verilog/incrementer.v} {1 {vlog -work work -stats=none {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/verilog/incrementer.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module incrementer
@@ -110,12 +103,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	incrementer
 
-} {} {}} {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/laboratorios/lab3/lab3/src/ALU.v} {1 {vlog -work work -stats=none {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/laboratorios/lab3/lab3/src/ALU.v}
+} {} {}} {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/verilog/I_DECODE.v} {1 {vlog -work work -stats=none {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/verilog/I_DECODE.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module ALU
+-- Compiling module I_DECODE
 
 Top level modules:
-	ALU
+	I_DECODE
 
 } {} {}} {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/verilog/RegisterFile.v} {1 {vlog -work work -stats=none {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/verilog/RegisterFile.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
@@ -123,5 +116,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 
 Top level modules:
 	RegisterFile
+
+} {} {}} {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/laboratorios/lab3/lab3/src/ALU.v} {1 {vlog -work work -stats=none {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/laboratorios/lab3/lab3/src/ALU.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module ALU
+
+Top level modules:
+	ALU
 
 } {} {}}

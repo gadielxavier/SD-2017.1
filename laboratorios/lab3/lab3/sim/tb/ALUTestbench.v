@@ -75,6 +75,8 @@ module ALUTestbench();
     initial begin
         for(i = 0; i < loops; i = i + 1)
         begin
+            
+
             /////////////////////////////////////////////
             // Put your random tests inside of this loop
             // and hard-coded tests outside of the loop
@@ -127,6 +129,147 @@ module ALUTestbench();
         ///////////////////////////////
         // Hard coded tests go here
         ///////////////////////////////
+        opcode =`RTYPE;
+        funct   =`ADDU;
+        A = 32'b10111000000000001011100101111011; //  problematic  input  for A
+        B = 32'b00100000000000001010111011001010; //  problematic  input  for B
+        REFout = A + B; //  expected  result
+        #1;
+        checkOutput(opcode , funct);
+
+
+
+        opcode =`RTYPE;
+        funct   =`SUBU;
+        A = 32'b10111000000000001011100101111011; //  problematic  input  for A
+        B = 32'b00100000000000001010111011001010; //  problematic  input  for B
+        REFout = A - B; //  expected  result
+        #1;
+        checkOutput(opcode , funct);
+
+
+
+        opcode =`RTYPE;
+        funct   =`AND;
+        A = 32'b10111000000000001011100101111011; //  problematic  input  for A
+        B = 32'b00100000000000001010111011001010; //  problematic  input  for B
+        REFout = A & B; //  expected  result
+        #1;
+        checkOutput(opcode , funct);
+
+
+
+        opcode =`RTYPE;
+        funct   =`OR;
+        A = 32'b10111000000000001011100101111011; //  problematic  input  for A
+        B = 32'b00100000000000001010111011001010; //  problematic  input  for B
+        REFout = A | B; //  expected  result
+        #1;
+        checkOutput(opcode , funct);
+
+
+        //FAZER REFOUT
+        opcode =`RTYPE;
+        funct   =`XOR;
+        A = 32'b10111000000000001011100101111011; //  problematic  input  for A
+        B = 32'b00100000000000001010111011001010; //  problematic  input  for B
+        REFout = A ^ B; //  expected  result
+        #1;
+        checkOutput(opcode , funct);
+
+        //FAZER REFOUT
+        opcode =`RTYPE;
+        funct   =`NOR;
+        A = 32'b10111000000000001011100101111011; //  problematic  input  for A
+        B = 32'b00100000000000001010111011001010; //  problematic  input  for B
+        REFout = ~A | ~B; //  expected  result
+        #1;
+        checkOutput(opcode , funct);
+
+
+        //FAZER REFOUT
+        opcode =`RTYPE;
+        funct   =`SLT;
+        A = 32'b10111000000000001011100101111011; //  problematic  input  for A
+        B = 32'b00100000000000001010111011001010; //  problematic  input  for B
+        REFout = A < B; //  expected  result
+        #1;
+        checkOutput(opcode , funct);
+
+
+        //FAZER REFOUT
+        opcode =`RTYPE;
+        funct   =`SLTU;
+        A = 32'b10111000000000001011100101111011; //  problematic  input  for A
+        B = 32'b00100000000000001010111011001010; //  problematic  input  for B
+        REFout = $unsigned(A) < $unsigned(B); //  expected  result
+        #1;
+        checkOutput(opcode , funct);
+
+
+        //FAZER REFOUT
+        opcode =`RTYPE;
+        funct   =`SLL;
+        A = 32'b10111000000000001011100101111011; //  problematic  input  for A
+        B = 32'b00100000000000001010111011001010; //  problematic  input  for B
+        REFout = A << B; //  expected  result
+        #1;
+        checkOutput(opcode , funct);
+
+
+        //FAZER REFOUT
+        opcode =`RTYPE;
+        funct   =`SRL;
+        A = 32'b10111000000000001011100101111011; //  problematic  input  for A
+        B = 32'b00100000000000001010111011001010; //  problematic  input  for B
+        REFout = A >> B; //  expected  result
+        #1;
+        checkOutput(opcode , funct);
+
+
+        //FAZER REFOUT
+        opcode =`RTYPE;
+        funct   =`SRA;
+        A = 32'b10111000000000001011100101111011; //  problematic  input  for A
+        B = 32'b00100000000000001010111011001010; //  problematic  input  for B
+        REFout = A >>> B; //  expected  result
+        #1;
+        checkOutput(opcode , funct);
+
+
+        //FAZER REFOUT
+        opcode =`RTYPE;
+        funct   =`SLLV;
+        A = 32'b10111000000000001011100101111011; //  problematic  input  for A
+        B = 32'b00100000000000001010111011001010; //  problematic  input  for B
+        REFout = A << B; //  expected  result
+        #1;
+        checkOutput(opcode , funct);
+
+
+        //FAZER REFOUT
+        opcode =`RTYPE;
+        funct   =`SRLV;
+        A = 32'b10111000000000001011100101111011; //  problematic  input  for A
+        B = 32'b00100000000000001010111011001010; //  problematic  input  for B
+        REFout = A >> B; //  expected  result
+        #1;
+        checkOutput(opcode , funct);
+
+
+        //FAZER REFOUT
+        opcode =`RTYPE;
+        funct   =`SRAV;
+        A = 32'b10111000000000001011100101111011; //  problematic  input  for A
+        B = 32'b00100000000000001010111011001010; //  problematic  input  for B
+        REFout = A >>> B; //  expected  result
+        #1;
+        checkOutput(opcode , funct);
+
+
+
+
+
 
         $display("\n\nADD YOUR ADDITIONAL TEST CASES HERE\n"); //delete this once you've written your test cases
        
