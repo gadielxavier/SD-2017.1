@@ -70,6 +70,18 @@ module ALUTestVectorTestbench();
 
     initial 
     begin
+
+          $readmemb("testvectors.input", testvector);
+        for(i = 0; i < testcases; i = i + 1) begin              
+            opcode = testvector[i][107:102];            
+            funct = testvector[i][101:96];
+            A = testvector[i][95:64];
+            B = testvector[i][63:32];
+            REFout = testvector[i][31:0];
+            #1
+            checkOutput(opcode, funct);
+                                            end
+
        $display("NO TESTS WRITTEN - FILL THIS OUT\n"); //delete this after you write your test cases
        
        $display("\n\nALL TESTS PASSED!");

@@ -267,8 +267,143 @@ module ALUTestbench();
         checkOutput(opcode , funct);
 
 
+        
+        opcode =`ITYPE;
+        funct   =`ADDIU;
+        A = 32'b00000000000000000000000000000011; //  3
+        B = 32'b00000000000000000000000000000010; //  2
+        REFout = A + B; //  5
+        #1;
+        checkOutput(opcode , funct);
+
+        
+
+        opcode =`ITYPE;
+        funct   =`SLTI;
+        A = 32'b00000000000000000000000000000011; //  3
+        B = 32'b00000000000000000000000000000010; //  2
+        REFout = A < B;
+        #1;
+        checkOutput(opcode , funct);        
 
 
+        opcode =`ITYPE;
+        funct   =`SLTIU;
+        A = 32'b00000000000000000000000000000011; //  3
+        B = 32'b00000000000000000000000000000010; //  2
+        REFout = A < B; 
+        #1;
+        checkOutput(opcode , funct);
+
+
+        opcode =`ITYPE;
+        funct   =`ANDI;
+        A = 32'b00000000000000000000000000000011; //  3
+        B = 32'b00000000000000000000000000000010; //  2
+        REFout = A & B; 
+        #1;
+        checkOutput(opcode , funct);
+
+
+        opcode =`ITYPE;
+        funct   =`ORI;
+        A = 32'b00000000000000000000000000000011; //  3
+        B = 32'b00000000000000000000000000000010; //  2
+        REFout = A | B; //  5
+        #1;
+        checkOutput(opcode , funct);
+
+
+        opcode =`ITYPE;
+        funct   =`XORI;
+        A = 32'b00000000000000000000000000000011; //  3
+        B = 32'b00000000000000000000000000000010; //  2
+        REFout = A ^ B; //  5
+        #1;
+        checkOutput(opcode , funct);
+
+
+        opcode =`ITYPE;
+        funct   =`LUI;
+        A = 32'b00000000000000000000000000000011; //  3
+        B = 32'b00000000000000000000000000000010; //  2
+        REFout = A + B; //  5
+        #1;
+        checkOutput(opcode , funct);
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //  ALTERAR OS MNEMÔNICOS DO REFOUT E O NOME DO OP                                           ///////////////////////
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        opcode =`LSTYPE;
+        funct   =`LB;
+        A = 32'b00000000000000000000000000000011; //  3
+        B = 32'b00000000000000000000000000000010; //  2
+        REFout = A + B; //  5
+        #1;
+        checkOutput(opcode , funct);
+
+
+        opcode =`LSTYPE;
+        funct   =`LH;
+        A = 32'b00000000000000000000000000000011; //  3
+        B = 32'b00000000000000000000000000000010; //  2
+        REFout = A + B; //  5
+        #1;
+        checkOutput(opcode , funct);
+
+
+        opcode =`LSTYPE;
+        funct   =`LW;
+        A = 32'b00000000000000000000000000000011; //  3
+        B = 32'b00000000000000000000000000000010; //  2
+        REFout = A + B; //  5
+        #1;
+        checkOutput(opcode , funct);
+
+
+        opcode =`LSTYPE;
+        funct   =`LBU;
+        A = 32'b00000000000000000000000000000011; //  3
+        B = 32'b00000000000000000000000000000010; //  2
+        REFout = A + B; //  5
+        #1;
+        checkOutput(opcode , funct);
+
+
+        opcode =`LSTYPE;
+        funct   =`LHU;
+        A = 32'b00000000000000000000000000000011; //  3
+        B = 32'b00000000000000000000000000000010; //  2
+        REFout = A + B; //  5
+        #1;
+        checkOutput(opcode , funct);
+
+
+        opcode =`LSTYPE;
+        funct   =`SB;
+        A = 32'b00000000000000000000000000000011; //  3
+        B = 32'b00000000000000000000000000000010; //  2
+        REFout = A + B; //  5
+        #1;
+        checkOutput(opcode , funct);
+
+
+        opcode =`LSTYPE;
+        funct   =`SH;
+        A = 32'b00000000000000000000000000000011; //  3
+        B = 32'b00000000000000000000000000000010; //  2
+        REFout = A + B; //  5
+        #1;
+        checkOutput(opcode , funct);
+
+
+        opcode =`LSTYPE;
+        funct   =`SW;
+        A = 32'b00000000000000000000000000000011; //  3
+        B = 32'b00000000000000000000000000000010; //  2
+        REFout = A + B; //  5
+        #1;
+        checkOutput(opcode , funct);
 
 
         $display("\n\nADD YOUR ADDITIONAL TEST CASES HERE\n"); //delete this once you've written your test cases

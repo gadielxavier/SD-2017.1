@@ -19,6 +19,7 @@ module ALU(
     input [31:0] A,B,
     input [3:0] ALUop,
     output reg [31:0] Out
+    output reg flagZero;
 );
 
  // Implement your ALU here, then delete this comment
@@ -78,6 +79,9 @@ always @ ( * ) begin
     	end
 
     endcase
+
+    if (Out == "32h'00000000") Z_flag <= 1'b1; // Zero detection
+        else Z_flag <= 1'b0;
 
 	
 end 
