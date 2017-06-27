@@ -20,11 +20,11 @@ module EXECUTE(
 				output wire MemRead_out,
 				output wire MemWrite_out,
 				output wire MemtoReg_out,
-				output wire [31:0] add_out1;
-				output wire [31:0] alu_out;
-				output wire aluzero_out;
-				output wire readdata2_out;
-				output wire [5:0] muxRegDst_out;
+				output wire [31:0] add_out1,
+				output wire [31:0] alu_out,
+				output wire aluzero_out,
+				output wire readdata2_out,
+				output wire [5:0] muxRegDst_out
 				 );
 
 //adder
@@ -34,18 +34,18 @@ wire [31:0] add_outWire;
 wire [31:0] muxAluSrc_outWire;
 
 //muxRegDst
-wire [5:0] muxRegDst_outWire;
+wire [4:0] muxRegDst_outWire;
 
 //ALUdec
 wire [3:0] ALUop_outWire;
-wire [5:0] func_inWire;
+wire [5:0] funct_inWire;
 
 //ALU
 wire [31:0] ALU_outWire;
 wire flagZeroWire;
 
 
-assign func_inWire = sigext[5:0];
+assign funct_inWire = sigext[5:0];
 
 
 //Instantiantions
@@ -69,14 +69,14 @@ muxRegDst muxRegDst_1(
 				);
 
 ALUdec ALUdec_1(
-				.func(func_inWire),
+				.funct(funct_inWire),
 				.opcode(opcode),
 				.ALUop(ALUop_outWire)
 		);
 
 ALU ALU_1(
 		.A(readdata1),
-		.B(muxRegDst_outWire),
+		.B(muxAluSrc_outWire),
     	.ALUop(ALUop_outWire),
     	.Out(ALU_outWire),
     	.flagZero(flagZeroWire)
@@ -102,9 +102,9 @@ EX_MEM EX_MEM_1(
 				.RegWrite_out(RegWrite_out),
 				.MemtoReg_out(MemtoReg_out),
 				.adder_out(add_out1),
-				.aluzero)out(aluzero_out),
+				.aluzero_out(aluzero_out),
 				.alu_out(alu_out),
 				.readdata2_out(readdata2_out), 
-				.mux_out(muxRegDst_out),
+				.mux_out(muxRegDst_out)
 				);
 endmodule

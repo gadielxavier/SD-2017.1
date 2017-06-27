@@ -3,7 +3,7 @@ Latch which passes data from the Fetch Stage to
 the Decode Stage.
 */
 
-module 	EX_MEN(
+module 	EX_MEM(
 				input wire branch, // Combined with a condition test boolean to enable loading the branch target address into the PC. 
 				input wire jump, //  Enables loading the jump target address into the PC. 
 				input wire MemRead, //  Enables a memory read for load instructions. 
@@ -23,10 +23,10 @@ module 	EX_MEN(
 				output reg RegWrite_out,
 				output reg MemtoReg_out,
 				output reg [31:0] adder_out,
-				output reg [1:0] aluzero)out,
+				output reg [1:0] aluzero_out,
 				output reg [31:0] alu_out,
 				output reg [31:0] readdata2_out, 
-				output reg [4:0] mux_out,
+				output reg [4:0] mux_out
 			);
 
 initial
