@@ -4,9 +4,9 @@ needed by the MIPS processor
 */
 
 module instMem(
-	input wire clk, rst,
-	input wire [31:0] addr,
-	output reg [31:0] data
+	input clk, rst,
+	input [31:0] addr,
+	output [31:0] instruction
 );
 
 reg [31:0]MEM[0:127];

@@ -19,6 +19,14 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	muxIF
 
+} {} {}} {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/MEM_STAGE.v} {2 {vlog -work work -stats=none {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/MEM_STAGE.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module MEM_STAGE
+** Warning: C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/MEM_STAGE.v(47): (vlog-2283) Extra semicolon in $unit (global) scope.
+
+Top level modules:
+	MEM_STAGE
+
 } {} {}} {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/I_FETCH.v} {1 {vlog -work work -stats=none {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/I_FETCH.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module I_FETCH
@@ -82,6 +90,20 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	ALUTestVectorTestbench
 
+} {} {}} {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/MEM_WB.v} {1 {vlog -work work -stats=none {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/MEM_WB.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module MEM_WB
+
+Top level modules:
+	MEM_WB
+
+} {} {}} {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/dataMem.v} {1 {vlog -work work -stats=none {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/dataMem.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module dataMem
+
+Top level modules:
+	dataMem
+
 } {} {}} {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/ID_EX.v} {1 {vlog -work work -stats=none {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/ID_EX.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module ID_EX
@@ -131,12 +153,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	IF_ID
 
-} {} {}} {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/instMem.v} {1 {vlog -work work -stats=none {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/instMem.v}
+} {} {}} {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/WB_STAGE.v} {1 {vlog -work work -stats=none {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/WB_STAGE.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module instMem
+-- Compiling module WB_STAGE
 
 Top level modules:
-	instMem
+	WB_STAGE
 
 } {} {}} {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/laboratorios/lab3/lab3/src/ALU.v} {1 {vlog -work work -stats=none {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/laboratorios/lab3/lab3/src/ALU.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
@@ -144,5 +166,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 
 Top level modules:
 	ALU
+
+} {} {}} {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/instMem.v} {1 {vlog -work work -stats=none {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/instMem.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module instMem
+
+Top level modules:
+	instMem
 
 } {} {}}
