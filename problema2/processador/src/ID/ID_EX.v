@@ -4,6 +4,7 @@ the Decode Stage.
 */
 
 module 	ID_EX(
+				input wire clk, rst, 
 				input wire branch, // Combined with a condition test boolean to enable loading the branch target address into the PC. 
 				input wire jump, //  Enables loading the jump target address into the PC. 
 				input wire AluSrc, //  Selects the second source operand for the ALU (rt or sign-extended immediate field in Patterson and Hennessey). 
@@ -38,7 +39,7 @@ module 	ID_EX(
 				output reg [4:0] instruction_1511_out
 			);
 
-initial
+always @(posedge rst)
 begin
 	branch_out <= 0;
 	jump_out <= 0;
@@ -57,7 +58,8 @@ begin
 	instruction_1511_out <= 0;
 end
 
-always @ * begin
+always @(posedge clk) 
+begin
 	branch_out <= branch;
 	jump_out <= jump;
 	AluSrc_out <= AluSrc;

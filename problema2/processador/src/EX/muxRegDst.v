@@ -8,7 +8,6 @@ module muxRegDst(
 	
 	always @(*)
 		begin
-			resultado <= 32'h00000000;
 			case(regDst)
 				1'b0: resultado <= entrada0;
 				1'b1: resultado <= entrada1; 

@@ -1,7 +1,7 @@
 module I_DECODE( 
 
 				input wire [31:0] instruction_in, npc_in,
-				input wire clk,
+				input wire CLK, RST, 
 				input wire RegWriteFromWB,
 
 
@@ -53,6 +53,8 @@ signext signext_1(
 				);
 
 control_unity control_unity1(
+								.clk(CLK),
+								.rst(RST),
 								.opcode(opcode_1),
 								.branch_eq(branch_eq_1),
 								.branch_ne(branch_ne_1),
@@ -72,13 +74,16 @@ RegisterFile RegisterFile_1(
 					.ReadRegister2(readRegister2),
 					.WriteRegister(writeRegister3),
 					.WriteData(writeData),
-					.Clk(clk),
+					.clk(CLK),
+					.rst(RST),
 					.RegWrite(RegWriteFromWB),
 					.ReadData1(readData1),
 					.ReadData2(readDatad2)
 					);
 
 ID_EX ID_EX_1(
+				.clk(CLK),
+				.rst(RST),
 				.branch(branch_eq_1),
 				.jump(jump_1),
 				.AluSrc(alusrc_1),

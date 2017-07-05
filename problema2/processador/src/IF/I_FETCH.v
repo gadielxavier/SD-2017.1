@@ -5,7 +5,7 @@ connected with each other.
 */
 
 module I_FETCH(
-				input EX_MEM_PCSrc, RST,
+				input EX_MEM_PCSrc, RST, CLK, 
 				input wire [31:0] EX_MEM_NPC, 
 				output wire [31:0 ] IF_ID_INSTR, IF_ID_NPC
 				);
@@ -25,14 +25,17 @@ muxIF muxIF_1 (
 			);
 
 pc pc_1 (
+			.clk(CLK),
+			.rst(RST),
 			.npc(npc_mux),
 			.pc_out(PC)
 		);
 
 instMem instMem_1 (
+					.clk(CLK),
 					.rst(RST),
 					.addr(PC),
-					.instruction(dataout)
+					.data(dataout)
 				);
 
 IF_ID IF_ID_1 (

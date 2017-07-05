@@ -4,6 +4,7 @@ the Decode Stage.
 */
 
 module 	EX_MEM(
+				input wire clk, rst, 
 				input wire branch, // Combined with a condition test boolean to enable loading the branch target address into the PC. 
 				input wire jump, //  Enables loading the jump target address into the PC. 
 				input wire MemRead, //  Enables a memory read for load instructions. 
@@ -29,7 +30,7 @@ module 	EX_MEM(
 				output reg [4:0] mux_out
 			);
 
-initial
+always @(posedge rst)
 begin
 	branch_out <= 0;
 	jump_out <= 0;
@@ -44,7 +45,8 @@ begin
 	mux_out <= 0;
 end
 
-always @ * begin
+always @(posedge clk) 
+begin
 	branch_out <= branch;
 	jump_out <= jump;
 	MemRead_out <= MemRead;

@@ -1,5 +1,5 @@
 module MEM_STAGE(
-				input wire clk_1, rst_1,
+				input wire CLK, RST,
 				input wire [1:0] control_wb,
 				input wire m_ctlout, alu_zero,
 				input wire [31:0] address, writeData, 
@@ -22,8 +22,8 @@ wire mem_data_out;
 
 dataMem dataMEm_1(
 					.addr(address),
-					.clk(clk_1),
-					.rst(rst_1),
+					.clk(CLK),
+					.rst(RST),
 					.data_in(writeData),
 					.data_out(mem_data_out),
 					.memRead(MemRead),
@@ -31,8 +31,8 @@ dataMem dataMEm_1(
 				);
 
 MEM_WB MEM_WB_1(
-				.clk(clk_1), 
-				.rst(rst_1),
+				.clk(CLK), 
+				.rst(RST),
 				.control_wb_in(control_wb),
 				.read_data_in(mem_data_out),
 				.alu_result_in(address),

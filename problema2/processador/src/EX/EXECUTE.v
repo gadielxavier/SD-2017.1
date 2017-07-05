@@ -1,4 +1,5 @@
 module EXECUTE( 
+				input CLK, RST,
 				input wire branch,
 				input wire jump,
 				input wire AluSrc,
@@ -83,6 +84,8 @@ ALU ALU_1(
 );
 
 EX_MEM EX_MEM_1(
+				.clk(CLK),
+				.rst(RST),
 				.branch(branch), // Combined with a condition test boolean to enable loading the branch target address into the PC. 
 				.jump(jump), //  Enables loading the jump target address into the PC. 
 				.MemRead(MemRead), //  Enables a memory read for load instructions. 
