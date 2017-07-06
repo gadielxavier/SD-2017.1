@@ -6,7 +6,7 @@ module pc(
 
 
 always @(posedge clk) begin 
- if (~rst) begin 
+ if (rst) begin 
  	pc_out <= 32'b0; 
  	end  
  else  begin 

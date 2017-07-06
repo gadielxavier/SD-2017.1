@@ -9,7 +9,7 @@ z2
 cModel Technology
 dC:/intelFPGA/16.1
 vadder
-Z0 !s110 1499256354
+Z0 !s110 1499310990
 !i10b 1
 !s100 YII5]n<XiPNKT5gAQ]KBg1
 I5V@DSESdhzQ>Tc=E;gYX61
@@ -23,7 +23,7 @@ Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z4 !s108 1499256354.000000
+Z4 !s108 1499310990.000000
 !s107 C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/EX/adder.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/EX/adder.v|
 !i113 1
@@ -73,8 +73,30 @@ R4
 R5
 R6
 n@a@l@udec
+vALUTestbench
+Z7 !s110 1499310991
+!i10b 1
+!s100 ]GhTSfic4j[Yz[EZB>zB?3
+IMVL8kDhGz?<fH7Xe:32PB3
+R1
+R2
+w1499307725
+8C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/sim/tb/ALUTestbench.v
+FC:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/sim/tb/ALUTestbench.v
+L0 15
+R3
+r1
+!s85 0
+31
+Z8 !s108 1499310991.000000
+!s107 C:\Users\Gadiel Xavier\Documents\UEFS\SD-2017.1\problema2\processador\sim\tb\Opcode.vh|C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/sim/tb/ALUTestbench.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/sim/tb/ALUTestbench.v|
+!i113 1
+R5
+R6
+n@a@l@u@testbench
 vALUTestVectorTestbench
-!s110 1499256355
+R7
 !i10b 1
 !s100 N`1jc3N`Zg=jfjY@FjiGP2
 IM>fJjQ`AedA50=n<k3PDk3
@@ -88,7 +110,7 @@ R3
 r1
 !s85 0
 31
-R4
+R8
 !s107 C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/sim/tb/ALUTestVectorTestbench.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/sim/tb/ALUTestVectorTestbench.v|
 !i113 1
@@ -96,7 +118,7 @@ R5
 R6
 n@a@l@u@test@vector@testbench
 vcontrol_unity
-Z7 !s110 1499256353
+R0
 !i10b 1
 !s100 :Y4_2cUP9SJ=j`kjjB<zX2
 IMmMdbQZ39XkGI0ULO9ZPJ1
@@ -110,14 +132,14 @@ R3
 r1
 !s85 0
 31
-Z8 !s108 1499256353.000000
+R4
 !s107 C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/ID/control_unity.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/ID/control_unity.v|
 !i113 1
 R5
 R6
 vdataMem
-R0
+R7
 !i10b 1
 !s100 hNYhV3g]M6>9o8A?36NdJ0
 IX1`oT9NHnPjco`=l<K2ha3
@@ -219,15 +241,37 @@ R3
 r1
 !s85 0
 31
-R8
+R4
 !s107 C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/ID/I_DECODE.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/ID/I_DECODE.v|
 !i113 1
 R5
 R6
 n@i_@d@e@c@o@d@e
+vI_DECODE_TEST
+!s110 1499342053
+!i10b 1
+!s100 ?0<3jL=jldCYzXzD>jU@E1
+II6LA8NK`1od`L<8j:R4DO2
+R1
+R2
+w1499342047
+8C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/sim/tb/I_DECODE_TEST.v
+FC:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/sim/tb/I_DECODE_TEST.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1499342053.000000
+!s107 C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/sim/tb/I_DECODE_TEST.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/sim/tb/I_DECODE_TEST.v|
+!i113 1
+R5
+R6
+n@i_@d@e@c@o@d@e_@t@e@s@t
 vI_FETCH
-Z9 !s110 1499256352
+Z9 !s110 1499310989
 !i10b 1
 !s100 _an=lEKCGHEjX=F<aEl620
 I_KXo?L0=]=f43;jGg`O>01
@@ -241,7 +285,7 @@ R3
 r1
 !s85 0
 31
-Z10 !s108 1499256352.000000
+Z10 !s108 1499310989.000000
 !s107 C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/IF/I_FETCH.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/IF/I_FETCH.v|
 !i113 1
@@ -249,13 +293,13 @@ R5
 R6
 n@i_@f@e@t@c@h
 vI_FETCH_TEST
-R0
+R7
 !i10b 1
-!s100 6E;>Zo4?YWS9gHSfD_8=f1
-ISP?N>1ongc_aPoAE^IC@:3
+!s100 bN`HXa]g]]eT[QgdB4D];2
+I8AhKH71f`l8mzUYSe`Vd:3
 R1
 R2
-w1496029314
+w1499306945
 8C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/sim/tb/I_FETCH_TEST.v
 FC:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/sim/tb/I_FETCH_TEST.v
 L0 1
@@ -263,7 +307,7 @@ R3
 r1
 !s85 0
 31
-R4
+R8
 !s107 C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/sim/tb/I_FETCH_TEST.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/sim/tb/I_FETCH_TEST.v|
 !i113 1
@@ -293,7 +337,7 @@ R5
 R6
 n@i@d_@e@x
 vIF_ID
-!s110 1499257886
+R0
 !i10b 1
 !s100 YXebgB=8e;bTL0keK8:HF2
 IC8OkKWbc_4gRccaT^8L:^1
@@ -307,7 +351,7 @@ R3
 r1
 !s85 0
 31
-!s108 1499257886.000000
+R10
 !s107 C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/IF/IF_ID.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/IF/IF_ID.v|
 !i113 1
@@ -315,7 +359,7 @@ R5
 R6
 n@i@f_@i@d
 vincrementer
-R7
+R0
 !i10b 1
 !s100 9Rdf?VOU78ozP9ioa@B`A0
 Ii2IIz=99O;;ZW3jWQb_102
@@ -329,20 +373,20 @@ R3
 r1
 !s85 0
 31
-R8
+R4
 !s107 C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/IF/incrementer.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/IF/incrementer.v|
 !i113 1
 R5
 R6
 vinstMem
-!s110 1499257894
+R0
 !i10b 1
-!s100 nJSNFz`eCE9ZA:MS=S3<Q0
-IzDCb8Ik`YT2G04<<KJ^AF1
+!s100 kZ`U`Xn>FVIIAJ?7F3V3D1
+Im@4gVe8VIL_U<nOc<MOaK2
 R1
 R2
-w1499257278
+w1499308894
 8C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/IF/instMem.v
 FC:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/IF/instMem.v
 L0 6
@@ -350,7 +394,7 @@ R3
 r1
 !s85 0
 31
-!s108 1499257894.000000
+R4
 !s107 C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/IF/instMem.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/IF/instMem.v|
 !i113 1
@@ -358,7 +402,7 @@ R5
 R6
 ninst@mem
 vMEM_STAGE
-R0
+R7
 !i10b 1
 !s100 j=;MjOZUcj_42T7cb0QUj0
 I=;zZV[d90J@@5G^leQ]J63
@@ -372,7 +416,7 @@ R3
 r1
 !s85 0
 31
-R4
+R8
 !s107 C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/MEM/MEM_STAGE.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/MEM/MEM_STAGE.v|
 !i113 1
@@ -424,7 +468,7 @@ R5
 R6
 nmux@alu@src
 vmuxIF
-R7
+R0
 !i10b 1
 !s100 RGeKLbZ;7XA80KaOidFfJ0
 IBegP>9@IBhOT?T9RBeNCS0
@@ -438,7 +482,7 @@ R3
 r1
 !s85 0
 31
-R8
+R4
 !s107 C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/IF/muxIF.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/IF/muxIF.v|
 !i113 1
@@ -470,11 +514,11 @@ nmux@reg@dst
 vpc
 R9
 !i10b 1
-!s100 JbbR9P3m^hGBGlk?nZG5H1
-IS0TOKICh7ZBR:>FFW[E;D1
+!s100 0;=cAoeCZNS`f?Qb2d_j>1
+Ik7Ckn>2Y15Qj5M@AlSl@G2
 R1
 R2
-w1499098170
+w1499308899
 8C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/IF/pc.v
 FC:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/IF/pc.v
 L0 1
@@ -511,7 +555,7 @@ R5
 R6
 n@register@file
 vsignext
-R7
+R0
 !i10b 1
 !s100 7`=1H<iK0Zzd<HGRAQali3
 I:nBUBKELA]F4jJeS_7=K30
@@ -525,14 +569,14 @@ R3
 r1
 !s85 0
 31
-R8
+R4
 !s107 C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/ID/signext.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/ID/signext.v|
 !i113 1
 R5
 R6
 vWB_STAGE
-R0
+R7
 !i10b 1
 !s100 MiaK1U4VmWdYOdWL:9`<a0
 IV5lBC=c?HWVzC:cD`iUgb3
@@ -546,7 +590,7 @@ R3
 r1
 !s85 0
 31
-R4
+R8
 !s107 C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/WB/WB_STAGE.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/WB/WB_STAGE.v|
 !i113 1

@@ -13,16 +13,10 @@ reg [31:0]MEM[0:127];
 
 always @ (posedge rst)
 begin
-	MEM[0] <= 0;
-	MEM[1] <= 1;
-	MEM[2] <= 2;
-	MEM[3] <= 3;
-	MEM[4] <= 4;
-	MEM[5] <= 5;
-	MEM[6] <= 6;
-	MEM[7] <= 7;
-	MEM[8] <= 8;
-	MEM[9] <= 9;
+	MEM[0] <= 32'h012DB820;
+	MEM[1] <= 32'h50016bff;
+	MEM[2] <= 32'h70060000;
+	MEM[3] <= 32'ha0118d50;
 end
 
 always@(posedge clk )
