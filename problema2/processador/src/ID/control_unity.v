@@ -1,3 +1,7 @@
+`include "../Opcode.vh"
+`include "../ALUop.vh"
+
+
 module control_unity(
 			input wire clk, rst, 
 			input  wire	[5:0]	opcode,
@@ -25,34 +29,36 @@ module control_unity(
 		end
 		else begin
 			case (opcode)
-			6'b100011: begin	/* lw */
-				memread  <= 1'b1;
+			`LW: begin	/* lw */
 				regdst   <= 1'b0;
+				memread  <= 1'b1;
 				memtoreg <= 1'b1;
 				alusrc   <= 1'b1;
+				regwrite <= 1'b1;
 			end
-			6'b001000: begin	/* addi */
+			`ADDI: begin	/* addi */
 				regdst   <= 1'b0;
 				alusrc   <= 1'b1;
+				regwrite <= 1'b1;
 			end
-			6'b000100: begin	/* beq */
-
+			`BEQ: begin	/* beq */
 				branch_eq <= 1'b1;
 				regwrite  <= 1'b0;
 			end
-			6'b101011: begin	/* sw */
+			`SW: begin	/* sw */
 				memwrite <= 1'b1;
 				alusrc   <= 1'b1;
 				regwrite <= 1'b0;
 			end
-			6'b000101: begin	/* bne */
-				aluop[0]  <= 1'b1;
+			`BNE: begin	/* bne */
 				branch_ne <= 1'b1;
 				regwrite  <= 1'b0;
 			end
-			6'b000000: begin	/* add */
+			`RTYPE: begin
+				regwrite <= 1;
+				regdst <= 1;
 			end
-			6'b000010: begin	/* j jump */
+			`J: begin	/* j jump */
 				jump <= 1'b1;
 			end
 			endcase

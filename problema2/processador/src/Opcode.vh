@@ -13,6 +13,7 @@
 `define SH      6'b101001
 `define SW      6'b101011
 // I-type
+`define ADDI 	6'b001000 //signed
 `define ADDIU   6'b001001
 `define SLTI    6'b001010
 `define SLTIU   6'b001011
@@ -20,7 +21,10 @@
 `define ORI     6'b001101
 `define XORI    6'b001110
 `define LUI     6'b001111 
-
+`define BEQ 	6'b000100
+`define BNE 6'b000101
+// Jump
+`define J 		6'b000010
 // Funct (R-type)
 `define SLL     6'b000000
 `define SRL     6'b000010

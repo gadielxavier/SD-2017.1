@@ -13,7 +13,8 @@ module EXECUTE(
 				input wire [31:0] readdata1,
 				input wire [31:0] readdata2,
 				input wire [31:0] sigext,
-				input wire [4:0] instruction_2015,
+				input wire [4:0] instruction_2521,
+				input wire [4:0] instruction_2016,
 				input wire [4:0] instruction_1511,
 
 				output wire branch_out,
@@ -45,6 +46,16 @@ wire [5:0] funct_inWire;
 wire [31:0] ALU_outWire;
 wire flagZeroWire;
 
+//shift2
+wire shift2_outWire;
+
+//Forward Unity
+wire MEMRegRd_wire;
+wire WBRegRd_wire;
+wire MEM_RegWrite_wire;
+wire WB_RegWrite_wire;
+wire ForwardA_wire;
+wire ForwardB_wire;
 
 assign funct_inWire = sigext[5:0];
 
@@ -52,7 +63,7 @@ assign funct_inWire = sigext[5:0];
 //Instantiantions
 adder adder_1(
 				.add_in1(npc),
-				.add_in2(sigext),
+				.add_in2(shift2_outWire),
 				.add_out(add_outWire)
 		);
 muxAluSrc muxAluSrc_1(
@@ -65,7 +76,7 @@ muxAluSrc muxAluSrc_1(
 muxRegDst muxRegDst_1(
 					.regDst(RegDst),
 					.entrada0(instruction_1511),
-					.entrada1(instruction_2015),
+					.entrada1(instruction_2016),
 					.resultado(muxRegDst_outWire)
 				);
 
@@ -82,6 +93,11 @@ ALU ALU_1(
     	.Out(ALU_outWire),
     	.flagZero(flagZeroWire)
 );
+
+shiftLeft2 shiftLeft2_1(
+						.in(sigext),
+						.out(shift2_outWire)
+					);
 
 EX_MEM EX_MEM_1(
 				.clk(CLK),
@@ -110,4 +126,16 @@ EX_MEM EX_MEM_1(
 				.readdata2_out(readdata2_out), 
 				.mux_out(muxRegDst_out)
 				);
+
+ForwardUnit  ForwardUnity_1(
+
+						.MEMRegRd(),
+						.WBRegRd(),
+						.EXRegRs(instruction_2521),
+						.EXRegRt(instruction_2016),
+						.MEM_RegWrite(),
+						.WB_RegWrite(),
+						.ForwardA(),
+						.ForwardB()
+						);
 endmodule

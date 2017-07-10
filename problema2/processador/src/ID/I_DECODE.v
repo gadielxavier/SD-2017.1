@@ -97,7 +97,7 @@ ID_EX ID_EX_1(
 				.readdata1(readData1),
 				.readdata2(readDatad2),
 				.sigext(signext_out),
-				.instruction_2015(instruction_in[20:15]),
+				.instruction_2016(instruction_in[20:16]),
 				.instruction_1511(instruction_in[15:11]),
 
 				.branch_out(branch_out_1),

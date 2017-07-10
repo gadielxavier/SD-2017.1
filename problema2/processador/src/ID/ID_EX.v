@@ -18,7 +18,7 @@ module 	ID_EX(
 				input wire [31:0] readdata1,
 				input wire [31:0] readdata2,
 				input wire [31:0] sigext, 
-				input wire [4:0] instruction_2015,
+				input wire [4:0] instruction_2016,
 				input wire [4:0] instruction_1511,
 
 
@@ -35,7 +35,7 @@ module 	ID_EX(
 				output reg [31:0] readdata1_out,
 				output reg [31:0] readdata2_out,
 				output reg [31:0] sigext_out,
-				output reg [4:0] instruction_2015_out,
+				output reg [4:0] instruction_2016_out,
 				output reg [4:0] instruction_1511_out
 			);
 
@@ -54,7 +54,7 @@ begin
 	readdata1_out <=0;
 	readdata2_out <= 0;
 	sigext_out <= 0;
-	instruction_2015_out <=0;
+	instruction_2016_out <=0;
 	instruction_1511_out <= 0;
 end
 
@@ -73,7 +73,7 @@ begin
 	readdata1_out <=readdata1;
 	readdata2_out <= readdata2;
 	sigext_out <= sigext;
-	instruction_2015_out <=instruction_2015;
+	instruction_2016_out <=instruction_2016;
 	instruction_1511_out <= instruction_1511;
 end
 
