@@ -5,6 +5,8 @@
 module control_unity(
 			input wire clk, rst, 
 			input  wire	[5:0]	opcode,
+			input wire hazardMux,
+
 			output reg			branch_eq, branch_ne,
 			output reg [5:0]	aluop,
 			output reg			memread, memwrite, memtoreg,
@@ -13,7 +15,8 @@ module control_unity(
 		);
 
 	always @(posedge clk or posedge rst) begin
-		if (rst) begin
+		assign aluop = opcode;
+		if (rst || hazardMux) begin
 			// reset
 			/* defaults */
 			aluop[5:0]	<= 5'b10;
@@ -62,9 +65,7 @@ module control_unity(
 				jump <= 1'b1;
 			end
 			endcase
-		end		
-		
-		assign aluop = opcode ;
+		end	
 
 	end
 endmodule

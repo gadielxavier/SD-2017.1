@@ -16,6 +16,12 @@ module EXECUTE(
 				input wire [4:0] instruction_2521,
 				input wire [4:0] instruction_2016,
 				input wire [4:0] instruction_1511,
+				input wire [4:0] MEMRegRd_wire,
+				input wire [4:0] WBRegRd_wire,
+				input wire MEM_RegWrite_wire,
+				input wire WB_RegWrite_wire,
+				input wire [31:0]regMemWb,
+				input wire [31:0]regExMem,
 
 				output wire branch_out,
 				output wire jump_out,
@@ -47,15 +53,11 @@ wire [31:0] ALU_outWire;
 wire flagZeroWire;
 
 //shift2
-wire shift2_outWire;
+wire [31:0] shift2_outWire;
 
 //Forward Unity
-wire MEMRegRd_wire;
-wire WBRegRd_wire;
-wire MEM_RegWrite_wire;
-wire WB_RegWrite_wire;
-wire ForwardA_wire;
-wire ForwardB_wire;
+wire [1:0] ForwardA_wire;
+wire [1:0] ForwardB_wire;
 
 assign funct_inWire = sigext[5:0];
 
@@ -68,7 +70,7 @@ adder adder_1(
 		);
 muxAluSrc muxAluSrc_1(
 					.aluSrc(AluSrc),
-					.entrada0(readdata2),
+					.entrada0(ALUSrcB),
 					.entrada1(sigext),
 					.resultado(muxAluSrc_outWire)
 		);
@@ -87,7 +89,7 @@ ALUdec ALUdec_1(
 		);
 
 ALU ALU_1(
-		.A(readdata1),
+		.A(ALUSrcA),
 		.B(muxAluSrc_outWire),
     	.ALUop(ALUop_outWire),
     	.Out(ALU_outWire),
@@ -111,7 +113,7 @@ EX_MEM EX_MEM_1(
 				.adder(add_outWire),
 				.aluzero(flagZeroWire),
 				.alu(ALU_outWire),
-				.readdata2(readdata2), 
+				.readdata2(ALUSrcB), 
 				.mux(muxRegDst_outWire),
 
 				.branch_out(branch_out),
@@ -127,15 +129,31 @@ EX_MEM EX_MEM_1(
 				.mux_out(muxRegDst_out)
 				);
 
+    mux3x1 mux0(
+    			.sel(ForwardA_wire),
+    			.entrada0(readdata1),
+    			.entrada1(datatowrite),
+    			.entrada2(MEMALUOut),
+    			.resultado(ALUSrcA)
+    			); 
+
+    mux3x1 mux1(
+    	.sel(ForwardB_wire),
+    	.entrada0(readdata2),
+    	.entrada1(datatowrite),
+    	.entrada2(MEMALUOut),
+    	.resultado(ALUSrcB)
+    ); 
+
 ForwardUnit  ForwardUnity_1(
 
-						.MEMRegRd(),
-						.WBRegRd(),
+						.MEMRegRd(MEMRegRd_wire),
+						.WBRegRd(WBRegRd_wire),
 						.EXRegRs(instruction_2521),
 						.EXRegRt(instruction_2016),
-						.MEM_RegWrite(),
-						.WB_RegWrite(),
-						.ForwardA(),
-						.ForwardB()
+						.MEM_RegWrite(MEM_RegWrite_wire),
+						.WB_RegWrite(WB_RegWrite_wire),
+						.ForwardA(ForwardA_wire),
+						.ForwardB(ForwardB_wire)
 						);
 endmodule

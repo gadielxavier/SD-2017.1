@@ -3,12 +3,17 @@ module I_DECODE(
 				input wire [31:0] instruction_in, npc_in,
 				input wire CLK, RST, 
 				input wire RegWriteFromWB,
+				input wire [4:0]  writeRegister3,
+				input wire [4:0] EXRegRt_wire,
+				input wire [31:0] writeData,
+				input wire EXMemRead_wire,
 
 
+				output wire PCWrite_wire,
 				output wire branch_out_1,
 				output wire jump_out_1,
 				output wire AluSrc_out_1,
-				output wire [1:0] AluOp_out_1,
+				output wire [4:0] AluOp_out_1,
 				output wire MemRead_out_1,
 				output wire MemWrite_out_1,
 				output wire RegWrite_out_1,
@@ -18,8 +23,10 @@ module I_DECODE(
 				output wire [31:0] readdata1_out_1,
 				output wire [31:0] readdata2_out_1,
 				output wire [31:0] sigext_out_1,
-				output wire [31:0] instruction_2015_out_1,
-				output wire [31:0] instruction_1511_out_1
+				output wire [31:0] instruction_2521_out_1,
+				output wire [31:0] instruction_2016_out_1,
+				output wire [31:0] instruction_1511_out_1,
+				output wire IFIDWrite_wire
 
 				 );
 
@@ -30,19 +37,22 @@ wire [31:0] signext_out;
 //control_unity
 wire [5:0] opcode_1;
 wire branch_eq_1, branch_ne_1;
-wire [1:0]	aluop_1;
+wire [5:0]	aluop_1;
 wire memread_1, memwrite_1, memtoreg_1;
 wire regdst_1, regwrite_1, alusrc_1;
 wire jump_1;
 
 //regfile
-wire [4:0] readRegister1, readRegister2, writeRegister3;
-wire [31:0] writeData;
+wire [4:0] readRegisterRs, readRegisterRt, readRegisterRd;
 wire [31:0] readData1, readDatad2;
 
+//hazard
+wire HazMuxCon_wire;
+
 assign signext_in = instruction_in[15:0];
-assign readRegister2 = instruction_in[20:16];
-assign readRegister1 = instruction_in[25:21];
+assign  readRegisterRd = instruction_in[15:11]; //rd
+assign readRegisterRt = instruction_in[20:16]; //rt
+assign readRegisterRs = instruction_in[25:21]; //rs
 assign opcode_1 = instruction_in[31:26];
 
 
@@ -52,10 +62,14 @@ signext signext_1(
 					.y(signext_out)
 				);
 
+
+
 control_unity control_unity1(
 								.clk(CLK),
 								.rst(RST),
 								.opcode(opcode_1),
+								.hazardMux(HazMuxCon_wire),
+
 								.branch_eq(branch_eq_1),
 								.branch_ne(branch_ne_1),
 								.aluop(aluop_1),
@@ -70,8 +84,8 @@ control_unity control_unity1(
 
 RegisterFile RegisterFile_1(
 
-					.ReadRegister1(readRegister1),
-					.ReadRegister2(readRegister2),
+					.ReadRegister1(readRegisterRs),
+					.ReadRegister2(readRegisterRt),
 					.WriteRegister(writeRegister3),
 					.WriteData(writeData),
 					.clk(CLK),
@@ -97,8 +111,9 @@ ID_EX ID_EX_1(
 				.readdata1(readData1),
 				.readdata2(readDatad2),
 				.sigext(signext_out),
-				.instruction_2016(instruction_in[20:16]),
-				.instruction_1511(instruction_in[15:11]),
+				.instruction_2521(readRegisterRs), //rs
+				.instruction_2016(readRegisterRt), //rt
+				.instruction_1511(readRegisterRd), //rd
 
 				.branch_out(branch_out_1),
 				.jump_out(jump_out_1),
@@ -113,8 +128,19 @@ ID_EX ID_EX_1(
 				.readdata1_out(readdata1_out_1),
 				.readdata2_out(readdata2_out_1),
 				.sigext_out(sigext_out_1),
-				.instruction_2015_out(instruction_2015_out_1),
+				.instruction_2521_out(instruction_2521_out_1),
+				.instruction_2016_out(instruction_2016_out_1),
 				.instruction_1511_out(instruction_1511_out_1)
 			);
+
+HazardUnit HazardUnit_1(
+						.IDRegRs(readRegisterRs),
+						.IDRegRt(readRegisterRt),
+						.EXRegRt(EXRegRt_wire),
+						.EXMemRead(EXMemRead_wire),
+						.PCWrite(PCWrite_wire),
+						.IFIDWrite(IFIDWrite_wire),
+						.HazMuxCon(HazMuxCon_wire)
+					);
 
 endmodule
