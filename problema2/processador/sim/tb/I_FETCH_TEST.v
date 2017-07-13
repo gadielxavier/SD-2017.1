@@ -1,43 +1,55 @@
 module I_FETCH_TEST;
 
 //inputs
-reg EX_MEM_PCSrc, rst, clk;
+reg EX_MEM_PCSrc, rst, clk, pc_write;
 reg [31:0] EX_MEM_NPC;
 
 //Outputs
 wire [31:0] IF_ID_INSTR;
 wire [31:0] IF_ID_NPC;
 
- integer i;
- reg [31:0] expected_mem_values [7:0];
 
-//Instantiate the Unit Under Test uut
+//variaveis locais
+integer i;
+reg [31:0] expected_mem_values [7:0];
+
+
 
 parameter Halfcycle = 5; //half period is 5ns
 
+// Clock Signal generation:
+initial clk = 0; 
+always #(Halfcycle) clk = ~clk;
+
+
+//Instantiate the Unit Under Test uut
 I_FETCH uut (
-	.EX_MEM_PCSrc(EX_MEM_PCSrc),
+	.BRANCH(EX_MEM_PCSrc),
 	.RST(rst),
 	.CLK(clk),
+    .PC_WRITE(pc_write),
 	.EX_MEM_NPC(EX_MEM_NPC),
 	.IF_ID_INSTR(IF_ID_INSTR),
 	.IF_ID_NPC(IF_ID_NPC)
 	);
 
-// Clock Signal generation:
-    initial clk = 0; 
-    always #(Halfcycle) clk = ~clk;
-
 initial
 begin
-	rst = 1;
 	EX_MEM_NPC = 0;
 	EX_MEM_PCSrc = 0;
-	#20
-	load_expected_mem_values;
-	rst = 0;
-	#20
+    pc_write = 1;
+    rst = 1; //para povoar a memoria o rst precisa estar ativo
+	#10
+    checkout_instruction;
+	load_expected_mem_values; 
+    rst = 0;
+	#10
+    checkout_instruction;
 	set_up;
+    #10
+    checkout_instruction;
+    #10
+    checkout_instruction;
 	//$stop;
 end
 
@@ -46,8 +58,7 @@ task set_up;
         $display("------------------------------");
         $display("set_up:");
         $display("------------------------------");
-        rst = 1;
-        #10; // Para povoar a memoria, o read_file tem que estar ativo quando o clock for de 0 para 1
+
         for (i = 0; i < 4; i = i + 1) begin
             if (uut.instMem_1.MEM[i] == expected_mem_values[i]) $display("OK! @ %t , Esperado (MEM[%d]): %h,  Obteve %h",
                 $time, i, expected_mem_values[i], uut.instMem_1.MEM[i]);
@@ -56,7 +67,7 @@ task set_up;
                 $time, i, expected_mem_values[i], uut.instMem_1.MEM[i]);
             end
         end
-        rst = 0;
+
     end
 endtask
 
@@ -66,6 +77,13 @@ endtask
         expected_mem_values[1] = 32'h50016bff;
         expected_mem_values[2] = 32'h70060000;
         expected_mem_values[3] = 32'ha0118d50;
+    end
+endtask
+
+task checkout_instruction ;
+    begin
+        $display("Instruction: %h", IF_ID_INSTR);
+        $display("pc: %h", IF_ID_NPC);
     end
 endtask
 

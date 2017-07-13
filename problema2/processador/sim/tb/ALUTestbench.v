@@ -67,8 +67,7 @@ module ALUTestbench();
     ALU DUT2( .A(A),
         .B(B),
         .ALUop(ALUop),
-        .Out(DUTout),
-        .flagZero(zero)
+        .Out(DUTout)
         );
 
     integer i;
@@ -140,6 +139,14 @@ module ALUTestbench();
         #1;
         checkOutput(opcode , funct);
 
+
+        opcode =`RTYPE;
+        funct   =`ADD;
+        A = -3; //  problematic  input  for A
+        B = 0; //  problematic  input  for B
+        REFout = A + B; //  expected  result
+        #1;
+        checkOutput(opcode , funct);
 
 
         opcode =`RTYPE;
@@ -283,4 +290,4 @@ module ALUTestbench();
         $finish();
     end
 
-  endmodule
+endmodule

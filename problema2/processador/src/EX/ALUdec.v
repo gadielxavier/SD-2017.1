@@ -49,6 +49,8 @@ always @(*) begin
 		`ORI: ALUop <= `ALU_OR;
 		`XORI: ALUop <= `ALU_XOR;
 		`LUI: ALUop <= `ALU_LUI;
+		`BEQ: ALUop <= `ALU_BEQ;
+		`BNE: ALUop <= `ALU_BNE;
 
 		default: ALUop = `ALU_XXX;
 		endcase

@@ -28,15 +28,10 @@ module EXECUTE(
 				output wire MemRead_out,
 				output wire MemWrite_out,
 				output wire MemtoReg_out,
-				output wire [31:0] add_out1,
 				output wire [31:0] alu_out,
-				output wire aluzero_out,
-				output wire readdata2_out,
-				output wire [5:0] muxRegDst_out
+				output wire [31:0] readdata2_out,
+				output wire [4:0] muxRegDst_out
 				 );
-
-//adder
-wire [31:0] add_outWire; 
 
 //muxAluSrc 
 wire [31:0] muxAluSrc_outWire;
@@ -52,8 +47,9 @@ wire [5:0] funct_inWire;
 wire [31:0] ALU_outWire;
 wire flagZeroWire;
 
-//shift2
-wire [31:0] shift2_outWire;
+//mux3x1
+wire [31:0] ALUSrcA, ALUSrcB;
+
 
 //Forward Unity
 wire [1:0] ForwardA_wire;
@@ -63,11 +59,6 @@ assign funct_inWire = sigext[5:0];
 
 
 //Instantiantions
-adder adder_1(
-				.add_in1(npc),
-				.add_in2(shift2_outWire),
-				.add_out(add_outWire)
-		);
 muxAluSrc muxAluSrc_1(
 					.aluSrc(AluSrc),
 					.entrada0(ALUSrcB),
@@ -92,14 +83,9 @@ ALU ALU_1(
 		.A(ALUSrcA),
 		.B(muxAluSrc_outWire),
     	.ALUop(ALUop_outWire),
-    	.Out(ALU_outWire),
-    	.flagZero(flagZeroWire)
+    	.Out(ALU_outWire)
 );
 
-shiftLeft2 shiftLeft2_1(
-						.in(sigext),
-						.out(shift2_outWire)
-					);
 
 EX_MEM EX_MEM_1(
 				.clk(CLK),
@@ -110,8 +96,6 @@ EX_MEM EX_MEM_1(
 				.MemWrite(MemWrite), // Enables a memory write for store instructions. 
 				.RegWrite(RegWrite), //  Enables a write to one of the registers. 
 				.MemtoReg(MemtoReg), //  Determines where the value to be written comes from (ALU result or memory). 
-				.adder(add_outWire),
-				.aluzero(flagZeroWire),
 				.alu(ALU_outWire),
 				.readdata2(ALUSrcB), 
 				.mux(muxRegDst_outWire),
@@ -122,8 +106,6 @@ EX_MEM EX_MEM_1(
 				.MemWrite_out(MemWrite_out),
 				.RegWrite_out(RegWrite_out),
 				.MemtoReg_out(MemtoReg_out),
-				.adder_out(add_out1),
-				.aluzero_out(aluzero_out),
 				.alu_out(alu_out),
 				.readdata2_out(readdata2_out), 
 				.mux_out(muxRegDst_out)
@@ -132,16 +114,16 @@ EX_MEM EX_MEM_1(
     mux3x1 mux0(
     			.sel(ForwardA_wire),
     			.entrada0(readdata1),
-    			.entrada1(datatowrite),
-    			.entrada2(MEMALUOut),
+    			.entrada1(regMemWb),
+    			.entrada2(regExMem),
     			.resultado(ALUSrcA)
     			); 
 
     mux3x1 mux1(
     	.sel(ForwardB_wire),
     	.entrada0(readdata2),
-    	.entrada1(datatowrite),
-    	.entrada2(MEMALUOut),
+    	.entrada1(regMemWb),
+    	.entrada2(regExMem),
     	.resultado(ALUSrcB)
     ); 
 

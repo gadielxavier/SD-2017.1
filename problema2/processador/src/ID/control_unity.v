@@ -5,7 +5,7 @@
 module control_unity(
 			input wire clk, rst, 
 			input  wire	[5:0]	opcode,
-			input wire hazardMux,
+			input wire hazardMux, //caso haja bolha zera sinais
 
 			output reg			branch_eq, branch_ne,
 			output reg [5:0]	aluop,

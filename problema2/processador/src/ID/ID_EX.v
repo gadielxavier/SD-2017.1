@@ -76,7 +76,7 @@ begin
 	readdata1_out <=readdata1;
 	readdata2_out <= readdata2;
 	sigext_out <= sigext;
-	instruction_2521_out <= 0;
+	instruction_2521_out <= instruction_2521;
 	instruction_2016_out <=instruction_2016;
 	instruction_1511_out <= instruction_1511;
 end

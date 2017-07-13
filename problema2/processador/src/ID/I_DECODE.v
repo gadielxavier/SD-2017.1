@@ -13,7 +13,7 @@ module I_DECODE(
 				output wire branch_out_1,
 				output wire jump_out_1,
 				output wire AluSrc_out_1,
-				output wire [4:0] AluOp_out_1,
+				output wire [5:0] AluOp_out_1,
 				output wire MemRead_out_1,
 				output wire MemWrite_out_1,
 				output wire RegWrite_out_1,
@@ -23,10 +23,13 @@ module I_DECODE(
 				output wire [31:0] readdata1_out_1,
 				output wire [31:0] readdata2_out_1,
 				output wire [31:0] sigext_out_1,
-				output wire [31:0] instruction_2521_out_1,
-				output wire [31:0] instruction_2016_out_1,
-				output wire [31:0] instruction_1511_out_1,
-				output wire IFIDWrite_wire
+				output wire [4:0] instruction_2521_out_1,
+				output wire [4:0] instruction_2016_out_1,
+				output wire [4:0] instruction_1511_out_1,
+				output wire IFIDWrite_wire,
+				output wire [31:0] shift2_outWire,
+				output wire branchTaken,
+				output wire [31:0] add_outWire 
 
 				 );
 
@@ -46,11 +49,15 @@ wire jump_1;
 wire [4:0] readRegisterRs, readRegisterRt, readRegisterRd;
 wire [31:0] readData1, readDatad2;
 
+
 //hazard
 wire HazMuxCon_wire;
 
+//and
+wire zero;
+
 assign signext_in = instruction_in[15:0];
-assign  readRegisterRd = instruction_in[15:11]; //rd
+assign readRegisterRd = instruction_in[15:11]; //rd
 assign readRegisterRt = instruction_in[20:16]; //rt
 assign readRegisterRs = instruction_in[25:21]; //rs
 assign opcode_1 = instruction_in[31:26];
@@ -62,13 +69,24 @@ signext signext_1(
 					.y(signext_out)
 				);
 
+shiftLeft2 shiftLeft2_1(
+						.in(signext_out),
+						.out(shift2_outWire)
+					);
 
+adder adder_1(
+				.add_in1(npc_in),
+				.add_in2(shift2_outWire),
+				.add_out(add_outWire)
+		);
+
+and branch (branchTaken, branch_eq, zero);
 
 control_unity control_unity1(
 								.clk(CLK),
 								.rst(RST),
 								.opcode(opcode_1),
-								.hazardMux(HazMuxCon_wire),
+								.hazardMux(HazMuxCon_wire), //caso haja bolha zera sinais
 
 								.branch_eq(branch_eq_1),
 								.branch_ne(branch_ne_1),
@@ -142,5 +160,7 @@ HazardUnit HazardUnit_1(
 						.IFIDWrite(IFIDWrite_wire),
 						.HazMuxCon(HazMuxCon_wire)
 					);
+
+assign zero =  (readData1 ==  readDatad2)? 1'b1:1'b0; 
 
 endmodule

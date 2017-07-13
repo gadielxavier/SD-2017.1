@@ -33,6 +33,7 @@
 `define SRLV    6'b000110
 `define SRAV    6'b000111
 `define ADDU    6'b100001
+`define ADD		6'b100000 //signed
 `define SUBU    6'b100011
 `define AND     6'b100100
 `define OR      6'b100101

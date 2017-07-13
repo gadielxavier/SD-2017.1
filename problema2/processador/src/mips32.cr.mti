@@ -12,6 +12,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	signext
 
+} {} {}} {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/EX/EXECUTE.v} {1 {vlog -work work -stats=none {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/EX/EXECUTE.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module EXECUTE
+
+Top level modules:
+	EXECUTE
+
 } {} {}} {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/EX/muxRegDst.v} {1 {vlog -work work -stats=none {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/EX/muxRegDst.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module muxRegDst
@@ -33,12 +40,19 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	ALUTestbench
 
-} {} {}} {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/EX/muxAluSrc.v} {1 {vlog -work work -stats=none {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/EX/muxAluSrc.v}
+} {} {}} {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/sim/tb/EXECUTE_TEST.v} {1 {vlog -work work -stats=none {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/sim/tb/EXECUTE_TEST.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module muxAluSrc
+-- Compiling module EXECUTE_TEST
 
 Top level modules:
-	muxAluSrc
+	EXECUTE_TEST
+
+} {} {}} {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/ID/I_DECODE.v} {1 {vlog -work work -stats=none {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/ID/I_DECODE.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module I_DECODE
+
+Top level modules:
+	I_DECODE
 
 } {} {}} {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/IF/I_FETCH.v} {1 {vlog -work work -stats=none {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/IF/I_FETCH.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
@@ -47,13 +61,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	I_FETCH
 
-} {} {}} {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/MEM/MEM_STAGE.v} {2 {vlog -work work -stats=none {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/MEM/MEM_STAGE.v}
+} {} {}} {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/EX/muxAluSrc.v} {1 {vlog -work work -stats=none {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/EX/muxAluSrc.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module MEM_STAGE
-** Warning: C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/MEM/MEM_STAGE.v(47): (vlog-2283) Extra semicolon in $unit (global) scope.
+-- Compiling module muxAluSrc
 
 Top level modules:
-	MEM_STAGE
+	muxAluSrc
 
 } {} {}} {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/ID/RegisterFile.v} {1 {vlog -work work -stats=none {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/ID/RegisterFile.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
@@ -62,19 +75,19 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	RegisterFile
 
-} {} {}} {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/IF/incrementer.v} {1 {vlog -work work -stats=none {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/IF/incrementer.v}
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module incrementer
-
-Top level modules:
-	incrementer
-
 } {} {}} {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/EX/mux3x1.v} {1 {vlog -work work -stats=none {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/EX/mux3x1.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module mux3x1
 
 Top level modules:
 	mux3x1
+
+} {} {}} {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/IF/incrementer.v} {1 {vlog -work work -stats=none {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/IF/incrementer.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module incrementer
+
+Top level modules:
+	incrementer
 
 } {} {}} {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/sim/tb/ALUTestVectorTestbench.v} {1 {vlog -work work -stats=none {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/sim/tb/ALUTestVectorTestbench.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
@@ -97,19 +110,19 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	control_unity
 
-} {} {}} {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/MEM/MEM_WB.v} {1 {vlog -work work -stats=none {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/MEM/MEM_WB.v}
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module MEM_WB
-
-Top level modules:
-	MEM_WB
-
 } {} {}} {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/ID/ID_EX.v} {1 {vlog -work work -stats=none {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/ID/ID_EX.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module ID_EX
 
 Top level modules:
 	ID_EX
+
+} {} {}} {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/MEM/MEM_WB.v} {1 {vlog -work work -stats=none {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/MEM/MEM_WB.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module MEM_WB
+
+Top level modules:
+	MEM_WB
 
 } {} {}} {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/EX/ALU.v} {1 {vlog -work work -stats=none {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/EX/ALU.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
@@ -125,13 +138,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	I_FETCH_TEST
 
-} {} {}} {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/MEM/dataMem.v} {1 {vlog -work work -stats=none {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/MEM/dataMem.v}
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module dataMem
-
-Top level modules:
-	dataMem
-
 } {} {}} {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/EX/EX_MEM.v} {1 {vlog -work work -stats=none {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/EX/EX_MEM.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module EX_MEM
@@ -139,12 +145,26 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	EX_MEM
 
-} {} {}} {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/EX/shiftLeft2.v} {1 {vlog -work work -stats=none {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/EX/shiftLeft2.v}
+} {} {}} {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/MEM/dataMem.v} {1 {vlog -work work -stats=none {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/MEM/dataMem.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module dataMem
+
+Top level modules:
+	dataMem
+
+} {} {}} {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/ID/shiftLeft2.v} {1 {vlog -work work -stats=none {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/ID/shiftLeft2.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module shiftLeft2
 
 Top level modules:
 	shiftLeft2
+
+} {} {}} {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/EX/ForwardUnit.v} {1 {vlog -work work -stats=none {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/EX/ForwardUnit.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module ForwardUnit
+
+Top level modules:
+	ForwardUnit
 
 } {} {}} {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/sim/tb/I_DECODE_TEST.v} {1 {vlog -work work -stats=none {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/sim/tb/I_DECODE_TEST.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
@@ -153,13 +173,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	I_DECODE_TEST
 
-} {} {}} {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/IF/pc.v} {1 {vlog -work work -stats=none {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/IF/pc.v}
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module pc
-
-Top level modules:
-	pc
-
 } {} {}} {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/IF/IF_ID.v} {1 {vlog -work work -stats=none {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/IF/IF_ID.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module IF_ID
@@ -167,14 +180,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	IF_ID
 
-} {} {}} {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/EX/ForwardUnit.v} {2 {vlog -work work -stats=none {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/EX/ForwardUnit.v}
+} {} {}} {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/IF/pc.v} {1 {vlog -work work -stats=none {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/IF/pc.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module ForwardUnit
-** Warning: C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/EX/ForwardUnit.v(29): (vlog-2275) 'ForwardUnit' already exists and will be overwritten.
--- Compiling module ForwardUnit
+-- Compiling module pc
 
 Top level modules:
-	ForwardUnit
+	pc
 
 } {} {}} {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/EX/ALUdec.v} {1 {vlog -work work -stats=none {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/EX/ALUdec.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
@@ -190,7 +201,7 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	instMem
 
-} {} {}} {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/EX/adder.v} {1 {vlog -work work -stats=none {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/EX/adder.v}
+} {} {}} {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/ID/adder.v} {1 {vlog -work work -stats=none {C:/Users/Gadiel Xavier/Documents/UEFS/SD-2017.1/problema2/processador/src/ID/adder.v}
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module adder
 
