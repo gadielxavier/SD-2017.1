@@ -27,7 +27,6 @@ module I_DECODE(
 				output wire [4:0] instruction_2016_out_1,
 				output wire [4:0] instruction_1511_out_1,
 				output wire IFIDWrite_wire,
-				output wire [31:0] shift2_outWire,
 				output wire branchTaken,
 				output wire [31:0] add_outWire 
 
@@ -48,6 +47,9 @@ wire jump_1;
 //regfile
 wire [4:0] readRegisterRs, readRegisterRt, readRegisterRd;
 wire [31:0] readData1, readDatad2;
+
+//shift2
+wire [31:0] shift2_outWire;
 
 
 //hazard

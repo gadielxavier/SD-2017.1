@@ -30,10 +30,12 @@ reg [31:0]regExMem;
 
 //Outputs
 wire branch_out;
+wire [4:0] ExRt;
 wire jump_out;
 wire MemRead_out;
 wire MemWrite_out;
 wire MemtoReg_out;
+wire RegWrite_out;
 wire [31:0] alu_out;
 wire [31:0] readdata2_out;
 wire [4:0] muxRegDst_out;
@@ -80,9 +82,11 @@ EXECUTE uut(
 
 
         .branch_out(branch_out),
+        .ExRt(ExRt),
         .jump_out(jump_out),
         .MemRead_out(MemRead_out),
         .MemWrite_out(MemWrite_out),
+        .RegWrite_out(RegWrite_out),
         .MemtoReg_out(MemtoReg_out),
         .alu_out(alu_out),
         .readdata2_out(readdata2_out),

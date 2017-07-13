@@ -5,8 +5,9 @@ connected with each other.
 */
 
 module I_FETCH(
-				input BRANCH, RST, CLK, PC_WRITE,
+				input BRANCH, RST, CLK, PC_WRITE, IFIDWrite,
 				input wire [31:0] EX_MEM_NPC, 
+
 				output wire [31:0 ] IF_ID_INSTR, IF_ID_NPC
 				);
 
@@ -42,6 +43,7 @@ instMem instMem_1 (
 IF_ID IF_ID_1 (
 				.clk(CLK),
 				.rst(RST),
+				.IFIDWrite(IFIDWrite),
 				.instruction_in(dataout),
 				.npc_in(npc_incrementer),
 				.instruction_out(IF_ID_INSTR),

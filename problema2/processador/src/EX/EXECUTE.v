@@ -24,9 +24,11 @@ module EXECUTE(
 				input wire [31:0]regExMem,
 
 				output wire branch_out,
+				output wire [4:0] ExRt,
 				output wire jump_out,
 				output wire MemRead_out,
 				output wire MemWrite_out,
+				output wire RegWrite_out,
 				output wire MemtoReg_out,
 				output wire [31:0] alu_out,
 				output wire [31:0] readdata2_out,
@@ -56,6 +58,8 @@ wire [1:0] ForwardA_wire;
 wire [1:0] ForwardB_wire;
 
 assign funct_inWire = sigext[5:0];
+
+assign  ExRt = instruction_2016;
 
 
 //Instantiantions

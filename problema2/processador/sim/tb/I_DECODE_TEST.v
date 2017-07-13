@@ -31,7 +31,6 @@ module I_DECODE_TEST;
 	wire [4:0] instruction_2016_out_2;
 	wire [4:0] instruction_1511_out_2;
 	wire IFIDWrite_wire;
-	wire [31:0] shift2_outWire_2;
 	wire branchTaken_2;
 	wire [31:0] add_outWire_2;
 

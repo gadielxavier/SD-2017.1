@@ -1,7 +1,7 @@
 module I_FETCH_TEST;
 
 //inputs
-reg EX_MEM_PCSrc, rst, clk, pc_write;
+reg EX_MEM_PCSrc, rst, clk, pc_write, IFIDWrite;
 reg [31:0] EX_MEM_NPC;
 
 //Outputs
@@ -27,8 +27,10 @@ I_FETCH uut (
 	.BRANCH(EX_MEM_PCSrc),
 	.RST(rst),
 	.CLK(clk),
+    .IFIDWrite(IFIDWrite),
     .PC_WRITE(pc_write),
 	.EX_MEM_NPC(EX_MEM_NPC),
+
 	.IF_ID_INSTR(IF_ID_INSTR),
 	.IF_ID_NPC(IF_ID_NPC)
 	);

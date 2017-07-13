@@ -4,12 +4,12 @@ the Decode Stage.
 */
 
 module 	IF_ID(
-				input wire clk, rst, 
+				input wire clk, rst, IFIDWrite,
 				input wire [31:0] instruction_in, npc_in,
 				output reg [31:0] instruction_out, npc_out
 			);
 
-always @(posedge rst)
+always @(posedge rst || IFIDWrite)
 begin
 	instruction_out <= 0;
 	npc_out <=0;
