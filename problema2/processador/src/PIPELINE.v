@@ -1,11 +1,35 @@
 module PIPELINE(
-	input wire clk, rst
+
+	input wire clk, rst,
+
+	//IF
+	output wire [31:0] IF_ID_INSTR,
+	output wire [31:0] IF_ID_NPC,
+
+	//ID
+	output wire [31:0] npc_out_2,
+	output wire [31:0] readdata1_out_2,
+	output wire [31:0] readdata2_out_2,
+	output wire [31:0] sigext_out_2,
+	output wire [4:0] instruction_2521_out_2,
+	output wire [4:0] instruction_2016_out_2,
+	output wire [4:0] instruction_1511_out_2,
+
+	//EX
+	output wire [31:0] alu_out,
+	output wire [31:0] readdata2_out,
+	output wire [4:0] muxRegDst_out,
+
+	//MEM
+	output wire [31:0] read_data_out_1,
+	output wire [31:0] mem_alu_result_1,
+
+	//WB
+	output wire[31:0] wb_data
 );
 
 
 //IF outputs
-wire [31:0] IF_ID_INSTR;
-wire [31:0] IF_ID_NPC;
 
 
 //ID outputs
@@ -19,13 +43,6 @@ wire MemWrite_out_2;
 wire RegWrite_out_2;
 wire RegDst_out_2;
 wire MemtoReg_out_2;
-wire [31:0] npc_out_2;
-wire [31:0] readdata1_out_2;
-wire [31:0] readdata2_out_2;
-wire [31:0] sigext_out_2;
-wire [4:0] instruction_2521_out_2;
-wire [4:0] instruction_2016_out_2;
-wire [4:0] instruction_1511_out_2;
 wire IFIDWrite_wire;
 wire [31:0] shift2_outWire_2;
 wire branchTaken_2;
@@ -40,22 +57,18 @@ wire MemRead_out;
 wire MemWrite_out;
 wire RegWrite_out;	
 wire MemtoReg_out;
-wire [31:0] alu_out;
-wire [31:0] readdata2_out;
-wire [4:0] muxRegDst_out;
+
 
 //MEM outputS
 wire ExRegWrite_out;
 wire ExMemtoReg_out;
 wire MEM_RegWrite_wire;
-wire [31:0] read_data_out_1;
-wire [31:0] mem_alu_result_1;
 wire [4:0] mem_write_reg_1;
 wire [4:0] MEMRegRd_wire;
 wire [31:0] regExMem;
 
 //WB outputs
-wire[31:0] wb_data;
+
 
 
 I_FETCH I_FETCH_1 (
