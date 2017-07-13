@@ -7,10 +7,10 @@ module MEM_STAGE(
 				input wire MemWrite,
 
 
-				output wire control_wb_out_1,
+				output wire [1:0] control_wb_out_1,
 				output wire [31:0] read_data_out_1,
 				output wire [31:0] mem_alu_result_1,
-				output wire [4:0] mem_write_reg_1
+				output wire [31:0] mem_write_reg_1
 				);
 
 wire [31:0] mem_data_out;

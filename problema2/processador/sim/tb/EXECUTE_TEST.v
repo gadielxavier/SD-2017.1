@@ -35,7 +35,6 @@ wire MemRead_out;
 wire MemWrite_out;
 wire MemtoReg_out;
 wire [31:0] alu_out;
-wire aluzero_out;
 wire [31:0] readdata2_out;
 wire [4:0] muxRegDst_out;
 
@@ -177,10 +176,10 @@ end
 task checkout ;
     begin
         if (alu_out == result) $display("Alu OK! @ %t , Esperado: %h,  Obteve %h",
-                $time,  alu_out, result);
+                $time,  result, alu_out);
         else begin
                 $display("Alu ERRO! @ %t , Esperado: %h,  Obteve %h",
-                $time,  alu_out, result);
+                $time,  result, alu_out);
         end 
 
     end
