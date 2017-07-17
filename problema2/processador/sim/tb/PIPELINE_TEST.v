@@ -66,7 +66,7 @@ PIPELINE PIPELINE_1(
 
 initial
 begin
-	rst = 1;
+	rst = 0;
 	#10
 	checkout;
 	rst = 0;
